@@ -32,7 +32,7 @@ type asset struct {
 
 // inATestAsset reads file data from disk. It returns an error on failure.
 func inATestAsset() (*asset, error) {
-	path := "/home/ts/code/go/src/github.com/asticode/go-bindata/testdata/in/a/test.asset"
+	path := "/home/ts/code/go/src/github.com/audrius-paskevicius/asticode-go-bindata/testdata/in/a/test.asset"
 	name := "in/a/test.asset"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -50,7 +50,7 @@ func inATestAsset() (*asset, error) {
 
 // inBTestAsset reads file data from disk. It returns an error on failure.
 func inBTestAsset() (*asset, error) {
-	path := "/home/ts/code/go/src/github.com/asticode/go-bindata/testdata/in/b/test.asset"
+	path := "/home/ts/code/go/src/github.com/audrius-paskevicius/asticode-go-bindata/testdata/in/b/test.asset"
 	name := "in/b/test.asset"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -68,7 +68,7 @@ func inBTestAsset() (*asset, error) {
 
 // inCTestAsset reads file data from disk. It returns an error on failure.
 func inCTestAsset() (*asset, error) {
-	path := "/home/ts/code/go/src/github.com/asticode/go-bindata/testdata/in/c/test.asset"
+	path := "/home/ts/code/go/src/github.com/audrius-paskevicius/asticode-go-bindata/testdata/in/c/test.asset"
 	name := "in/c/test.asset"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -86,7 +86,7 @@ func inCTestAsset() (*asset, error) {
 
 // inTestAsset reads file data from disk. It returns an error on failure.
 func inTestAsset() (*asset, error) {
-	path := "/home/ts/code/go/src/github.com/asticode/go-bindata/testdata/in/test.asset"
+	path := "/home/ts/code/go/src/github.com/audrius-paskevicius/asticode-go-bindata/testdata/in/test.asset"
 	name := "in/test.asset"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -157,18 +157,20 @@ var _bindata = map[string]func() (*asset, error){
 	"in/a/test.asset": inATestAsset,
 	"in/b/test.asset": inBTestAsset,
 	"in/c/test.asset": inCTestAsset,
-	"in/test.asset": inTestAsset,
+	"in/test.asset":   inTestAsset,
 }
 
 // AssetDir returns the file names below a certain
 // directory embedded in the file by go-bindata.
 // For example if you run go-bindata on data/... and data contains the
 // following hierarchy:
-//     data/
-//       foo.txt
-//       img/
-//         a.png
-//         b.png
+//
+//	data/
+//	  foo.txt
+//	  img/
+//	    a.png
+//	    b.png
+//
 // then AssetDir("data") would return []string{"foo.txt", "img"}
 // AssetDir("data/img") would return []string{"a.png", "b.png"}
 // AssetDir("foo.txt") and AssetDir("notexist") would return an error
@@ -199,6 +201,7 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"in": &bintree{nil, map[string]*bintree{
 		"a": &bintree{nil, map[string]*bintree{
@@ -260,4 +263,3 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-
